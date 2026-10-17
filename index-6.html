@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b35">
+  <title>ليالي الأبطال | أخبار دوري أبطال أوروبا</title>
+  <style>
+    :root{--navy:#071b35;--navy2:#0d2a50;--blue:#1769ff;--gold:#f5c451;--paper:#f4f7fb;--ink:#14243a;--muted:#6e7d91;--white:#fff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+    a{color:inherit;text-decoration:none}button,input{font:inherit}
+    .topline{height:5px;background:linear-gradient(90deg,#1769ff,#8a5cff,#f5c451)}
+    header{background:var(--navy);color:white;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px #06162b30}
+    .nav{max-width:1180px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:1.2rem;white-space:nowrap}
+    .logo{width:43px;height:43px;border-radius:14px;background:linear-gradient(135deg,#246bff,#a15bff);display:grid;place-items:center;font-size:24px;box-shadow:0 5px 18px #1769ff50}
+    nav{display:flex;gap:20px;color:#d8e4f5;font-size:.92rem}nav a:hover{color:var(--gold)}
+    .search{display:flex;background:#ffffff12;border:1px solid #ffffff2b;border-radius:12px;overflow:hidden;max-width:245px}
+    .search input{width:100%;min-width:0;background:transparent;border:0;outline:0;color:white;padding:9px 12px}.search input::placeholder{color:#c1ccdc}
+    .search button{border:0;background:var(--blue);color:white;padding:0 13px;cursor:pointer}
+    .hero{background:radial-gradient(circle at 15% 20%,#174b8b 0,transparent 32%),linear-gradient(120deg,#06152b,#102e59 65%,#17245b);color:white;overflow:hidden}
+    .hero-inner{max-width:1180px;margin:auto;padding:55px 20px 48px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:30px;min-height:330px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-weight:bold;font-size:.85rem;letter-spacing:.3px}
+    .live-dot{width:8px;height:8px;border-radius:50%;background:#ff5454;display:inline-block;box-shadow:0 0 0 5px #ff545426}
+    h1{font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.2;margin:15px 0}
+    .hero p{color:#d0dced;max-width:620px;margin:0 0 24px}
+    .cta{display:inline-block;background:var(--gold);color:#14243a;font-weight:900;padding:11px 20px;border-radius:12px;transition:.2s}.cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px #0003}
+    .hero-art{position:relative;min-height:220px;display:grid;place-items:center}
+    .orbit{width:230px;height:230px;border:1px solid #ffffff3a;border-radius:50%;display:grid;place-items:center;box-shadow:0 0 0 28px #ffffff08,0 0 0 58px #ffffff05}
+    .trophy{font-size:112px;filter:drop-shadow(0 16px 20px #0006);transform:rotate(-8deg)}
+    .star{position:absolute;color:var(--gold);font-size:25px}.s1{top:20px;right:18%}.s2{bottom:25px;left:14%;font-size:18px}.s3{top:45%;left:8%;font-size:14px}
+    main{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:8px 0 18px}.section-head h2{margin:0;font-size:1.55rem}.section-head p{margin:4px 0 0;color:var(--muted);font-size:.9rem}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.filter{border:1px solid #dce4ef;background:white;color:#53647a;border-radius:30px;padding:7px 15px;cursor:pointer;font-size:.9rem}.filter.active,.filter:hover{background:var(--navy2);color:white;border-color:var(--navy2)}
+    .news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .card{background:white;border:1px solid #e6ebf2;border-radius:18px;overflow:hidden;box-shadow:0 6px 20px #0b234008;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+    .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px #0b234014}
+    .cover{height:155px;display:grid;place-items:center;position:relative;overflow:hidden;color:white;background:linear-gradient(135deg,#143c73,#1769ff)}
+    .cover::before,.cover::after{content:"";position:absolute;border:1px solid #ffffff30;border-radius:50%;width:190px;height:190px}.cover::after{width:130px;height:130px}
+    .cover .emoji{font-size:58px;z-index:1;filter:drop-shadow(0 8px 8px #001a3a55)}
+    .cover.purple{background:linear-gradient(135deg,#32205e,#8757dc)}.cover.green{background:linear-gradient(135deg,#064c48,#13a58d)}.cover.orange{background:linear-gradient(135deg,#7c351d,#f09b35)}.cover.red{background:linear-gradient(135deg,#601f36,#e34e69)}.cover.slate{background:linear-gradient(135deg,#26364e,#71839d)}
+    .tag{position:absolute;top:12px;right:12px;background:#ffffffed;color:#19304e;padding:4px 10px;border-radius:20px;font-size:.75rem;font-weight:bold;z-index:2}
+    .card-body{padding:17px;display:flex;flex-direction:column;flex:1}.meta{display:flex;gap:10px;color:var(--muted);font-size:.78rem;margin-bottom:8px}.card h3{font-size:1.08rem;line-height:1.55;margin:0 0 9px}.card p{font-size:.9rem;color:#66758a;margin:0 0 15px;flex:1}
+    .read{border:0;background:none;color:var(--blue);font-weight:bold;text-align:right;cursor:pointer;padding:0;align-self:flex-start}.read:hover{text-decoration:underline}
+    .empty{grid-column:1/-1;text-align:center;padding:35px;background:white;border-radius:15px;color:var(--muted)}
+    .lower{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:35px}
+    .panel{background:white;border:1px solid #e6ebf2;border-radius:18px;padding:22px}.panel h2{font-size:1.25rem;margin:0 0 15px}
+    .match{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid #edf0f5}.match:last-child{border-bottom:0}.team{display:flex;align-items:center;gap:8px;font-weight:bold}.team:last-child{justify-content:flex-end}.crest{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#eef3fb;font-size:18px}.versus{font-size:.76rem;color:var(--muted);text-align:center}.match-note{font-size:.7rem;color:var(--muted);display:block;font-weight:normal}
+    .notice{background:#fff7df;border:1px solid #f5df9a;color:#775b13;border-radius:12px;padding:12px 14px;font-size:.82rem;margin-top:18px}
+    footer{background:#06152b;color:#b7c5d9;padding:27px 20px;text-align:center;font-size:.85rem}footer strong{color:white}
+    .modal-backdrop{position:fixed;inset:0;background:#06152bd9;z-index:30;display:none;align-items:center;justify-content:center;padding:20px}.modal-backdrop.show{display:flex}.modal{background:white;max-width:620px;width:100%;max-height:85vh;overflow:auto;border-radius:20px;padding:25px;position:relative}.close{position:absolute;left:18px;top:12px;border:0;background:#edf2f8;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:20px}.modal h2{margin-top:0;padding-left:35px}.modal p{color:#53647a}.modal .modal-label{font-size:.8rem;color:var(--blue);font-weight:bold}
+    @media(max-width:850px){.nav{flex-wrap:wrap}.nav nav{order:3;width:100%;justify-content:center}.hero-inner{grid-template-columns:1fr;text-align:center;padding-top:40px}.hero p{margin-left:auto;margin-right:auto}.hero-art{min-height:190px}.orbit{width:175px;height:175px}.trophy{font-size:85px}.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.nav{padding:12px 14px}.brand{font-size:1rem}.logo{width:37px;height:37px}.nav nav{gap:15px;font-size:.82rem}.search{max-width:none;width:100%;order:4}.hero-inner{padding:35px 17px}.hero-art{min-height:155px}.orbit{width:145px;height:145px}.trophy{font-size:72px}main{padding:22px 14px 45px}.news-grid{grid-template-columns:1fr}.cover{height:170px}.lower{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#" aria-label="ليالي الأبطال - الصفحة الرئيسية"><span class="logo">🏆</span><span>ليالي الأبطال</span></a>
+      <nav aria-label="القائمة الرئيسية"><a href="#news">آخر الأخبار</a><a href="#matches">المباريات</a><a href="#about">عن الموقع</a></nav>
+      <form class="search" id="searchForm" role="search"><input id="searchInput" type="search" placeholder="ابحث في الأخبار..." aria-label="ابحث في الأخبار"><button type="submit" aria-label="بحث">⌕</button></form>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow"><span class="live-dot"></span> عالم دوري أبطال أوروبا</span>
+        <h1>كل الحكاية تبدأ<br>من ليلة أوروبية</h1>
+        <p>تابع أخبار البطولة، تحليلات المباريات، أبرز النجوم، والنتائج في مكان واحد.</p>
+        <a class="cta" href="#news">اكتشف آخر الأخبار ←</a>
+      </div>
+      <div class="hero-art" aria-hidden="true"><span class="star s1">✦</span><span class="star s2">✧</span><span class="star s3">✦</span><div class="orbit"><span class="trophy">🏆</span></div></div>
+    </div>
+  </section>
+
+  <main>
+    <section id="news">
+      <div class="section-head"><div><h2>أحدث الأخبار</h2><p>كل ما يهمك عن أقوى بطولة للأندية في أوروبا</p></div><span id="newsCount" style="color:var(--muted);font-size:.85rem"></span></div>
+      <div class="filters" aria-label="تصفية الأخبار">
+        <button class="filter active" data-category="all">كل الأخبار</button>
+        <button class="filter" data-category="أخبار">أخبار البطولة</button>
+        <button class="filter" data-category="تحليل">تحليلات</button>
+        <button class="filter" data-category="نجوم">نجوم</button>
+      </div>
+      <div class="news-grid" id="newsGrid" aria-live="polite"></div>
+    </section>
+
+    <div class="lower">
+      <section class="panel" id="matches">
+        <h2>مواعيد ونتائج المباريات</h2>
+        <div class="match"><div class="team"><span class="crest">⚪</span> ريال مدريد</div><div class="versus">VS<span class="match-note">موعد يحدد لاحقاً</span></div><div class="team">بايرن ميونخ <span class="crest">🔴</span></div></div>
+        <div class="match"><div class="team"><span class="crest">🔵</span> مانشستر سيتي</div><div class="versus">VS<span class="match-note">موعد يحدد لاحقاً</span></div><div class="team">باريس سان جيرمان <span class="crest">🔵</span></div></div>
+        <div class="match"><div class="team"><span class="crest">🔴</span> ليفربول</div><div class="versus">VS<span class="match-note">موعد يحدد لاحقاً</span></div><div class="team">برشلونة <span class="crest">🔴</span></div></div>
+        <div class="notice">تنبيه: المواعيد والأسماء هنا أمثلة توضيحية للتصميم، وليست جدولاً رسمياً أو تحديثاً مباشراً.</div>
+      </section>
+      <section class="panel" id="about">
+        <h2>عن ليالي الأبطال</h2>
+        <p>موقع تجريبي لعشاق دوري أبطال أوروبا، صُمّم باستخدام HTML وCSS وJavaScript، بواجهة عربية متجاوبة مع الهاتف والكمبيوتر.</p>
+        <p>يمكنك البحث داخل الأخبار، تصفيتها حسب القسم، وفتح كل خبر لقراءة تفاصيله.</p>
+        <div class="notice">الأخبار المعروضة في هذا النموذج تجريبية وليست أخباراً حقيقية أو مباشرة. يلزم ربط الموقع بمصدر أخبار أو واجهة API للحصول على تحديثات فعلية.</div>
+      </section>
+    </div>
+  </main>
+
+  <footer><strong>ليالي الأبطال 🏆</strong> — موقع تجريبي لمتابعة أخبار دوري أبطال أوروبا © <span id="year"></span></footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <article class="modal"><button class="close" id="closeModal" aria-label="إغلاق">×</button><div class="modal-label" id="modalCategory"></div><h2 id="modalTitle"></h2><div class="meta" id="modalMeta"></div><p id="modalText"></p></article>
+  </div>
+
+  <script>
+    const articles = [
+      {id:1,category:"أخبار",date:"نموذج تجريبي",title:"كل ما تحتاج معرفته عن نظام دوري أبطال أوروبا",summary:"نظرة مبسطة على شكل البطولة، مرحلة الدوري، وطريق الفرق نحو الأدوار الإقصائية.",body:"يستعرض هذا الخبر التوضيحي طريقة تنظيم دوري أبطال أوروبا وكيف تتنافس الأندية للوصول إلى الأدوار الإقصائية. أضف هنا تفاصيل الخبر الفعلي والمصدر وتاريخ النشر عند ربط الموقع بمصدر أخبار موثوق.",emoji:"🏆",color:""},
+      {id:2,category:"تحليل",date:"نموذج تجريبي",title:"كيف تصنع الفرق الكبرى الفارق في الليالي الأوروبية؟",summary:"الضغط العالي، التحولات السريعة، واستغلال المساحات من مفاتيح الحسم في المباريات الكبيرة.",body:"في هذا المثال التحليلي، نركز على أهمية التنظيم الدفاعي والتحول السريع من الدفاع إلى الهجوم. التحليل الحقيقي يحتاج إلى بيانات المباراة وتشكيلات الفريقين وإحصاءاتهما.",emoji:"📊",color:"purple"},
+      {id:3,category:"نجوم",date:"نموذج تجريبي",title:"نجوم تحت الأضواء في دوري أبطال أوروبا",summary:"الموهبة وحدها لا تكفي؛ التركيز وصناعة القرار قد يحسمان المواجهات في أصعب اللحظات.",body:"هذا نص تجريبي لقسم النجوم. يمكن استبداله بآخر أخبار اللاعبين، تصريحات المدربين، والإحصاءات الموثقة مع إضافة مصدر الخبر وتاريخ نشره.",emoji:"⭐",color:"orange"},
+      {id:4,category:"أخبار",date:"نموذج تجريبي",title:"رحلة طويلة نحو الكأس ذات الأذنين",summary:"من مرحلة الدوري إلى النهائي، كل مباراة قد تغيّر مسار موسم كامل بالنسبة للأندية.",body:"يقدم هذا الخبر تصوراً عاماً عن التحديات التي تواجه الأندية خلال البطولة. عند النشر الفعلي، تأكد من مراجعة المعلومات والتواريخ من مصدر رسمي.",emoji:"🛣️",color:"green"},
+      {id:5,category:"تحليل",date:"نموذج تجريبي",title:"لماذا تُحسم المباريات الكبيرة من التفاصيل الصغيرة؟",summary:"الكرات الثابتة، التبديلات، والهدوء أمام المرمى عوامل يمكن أن تقلب نتيجة المواجهة.",body:"في مباريات المستوى العالي، قد تصنع التفاصيل الصغيرة فرقاً واضحاً. راقب جودة الفرص، دقة التمرير، الكرات الثابتة، والتبديلات عند إعداد تحليل حقيقي.",emoji:"⚽",color:"slate"},
+      {id:6,category:"نجوم",date:"نموذج تجريبي",title:"المواهب الشابة تبحث عن لحظتها الأوروبية",summary:"البطولة تمنح اللاعبين الشباب فرصة لإثبات أنفسهم أمام أكبر الأندية والجماهير.",body:"هذا نموذج لمقال عن المواهب الشابة. يمكن تحديثه بأسماء اللاعبين وإحصاءاتهم بعد التحقق من المعلومات عبر المصادر الرسمية أو الصحفية الموثوقة.",emoji:"🚀",color:"red"}
+    ];
+    let activeCategory = "all";
+    const grid = document.getElementById("newsGrid");
+    const searchInput = document.getElementById("searchInput");
+    function renderNews(){
+      const term = searchInput.value.trim().toLocaleLowerCase("ar");
+      const filtered = articles.filter(a => (activeCategory === "all" || a.category === activeCategory) &&
+        (a.title+" "+a.summary+" "+a.category).toLocaleLowerCase("ar").includes(term));
+      document.getElementById("newsCount").textContent = `${filtered.length} أخبار`;
+      if(!filtered.length){grid.innerHTML='<div class="empty">ما لقينا أخبار مطابقة للبحث. جرّب كلمات تانية.</div>';return;}
+      grid.innerHTML = filtered.map(a=>`<article class="card">
+        <div class="cover ${a.color}"><span class="tag">${a.category}</span><span class="emoji">${a.emoji}</span></div>
+        <div class="card-body"><div class="meta"><span>🗓 ${a.date}</span><span>•</span><span>قراءة قصيرة</span></div>
+        <h3>${a.title}</h3><p>${a.summary}</p><button class="read" data-id="${a.id}">اقرأ الخبر ←</button></div></article>`).join("");
+    }
+    document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{
+      document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");activeCategory=btn.dataset.category;renderNews();
+    }));
+    document.getElementById("searchForm").addEventListener("submit",e=>{e.preventDefault();renderNews();document.getElementById("news").scrollIntoView({behavior:"smooth"});});
+    searchInput.addEventListener("input",renderNews);
+    grid.addEventListener("click",e=>{
+      const button=e.target.closest("[data-id]");if(!button)return;
+      const a=articles.find(item=>item.id===Number(button.dataset.id));if(!a)return;
+      document.getElementById("modalCategory").textContent=a.category+" • "+a.date;
+      document.getElementById("modalTitle").textContent=a.title;
+      document.getElementById("modalMeta").textContent="ليالي الأبطال | محتوى تجريبي";
+      document.getElementById("modalText").textContent=a.body;
+      document.getElementById("modalBackdrop").classList.add("show");
+    });
+    function closeModal(){document.getElementById("modalBackdrop").classList.remove("show");}
+    document.getElementById("closeModal").addEventListener("click",closeModal);
+    document.getElementById("modalBackdrop").addEventListener("click",e=>{if(e.target.id==="modalBackdrop")closeModal();});
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
+    document.getElementById("year").textContent=new Date().getFullYear();
+    renderNews();
+  </script>
+</body>
+</html>
